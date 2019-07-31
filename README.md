@@ -5,6 +5,7 @@
 I've attempted this from scratch 3 times now following different guides, and everytime, when i get to the end,
 I just get a 500 internal server error. I've looked through the error log files, and I'm having trouble finding
 the source of the problem, here's the error.log report:
+
 '''
 [Wed Jul 31 04:59:52.609298 2019] [wsgi:error] [pid 2888:tid 139975696873216]     compat.reraise(exc_type, exc_value, exc_tb)
 [Wed Jul 31 04:59:52.609300 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool/impl.py", line 136, in _do_get
