@@ -3,8 +3,13 @@
 ## Project Status
 
 I've attempted this from scratch 3 times now following different guides, and everytime, when i get to the end,
-I just get a 500 internal server error. I've looked through all the log files in **var/log**, and none of them
-give me any information about what is going wrong, so I'm really not sure how to begin troubleshooting my issue.
+I just get a 500 internal server error. I've looked through the error log files, and I'm having trouble finding
+the source of the problem, here's the error.log report:
+'''
+
+'''
+
+My project runs fine through flask on localhost, and I see the correct tables in my postgres db,  so that's not the issue.
 
 I'm really worried, as there are only a few weeks left in the class, and I really could use some guidance!
 
@@ -182,6 +187,10 @@ At this point everything should be set up, we just need to put our already worki
     
     14. Restart Apache server service one last time, and at this point your site should load!
         
-    
-    
-  
+# References
+
+These are the guides that I followed, and unfortunately I had no luck:
+
+- [cuanqin3's guide](https://github.com/chuanqin3/udacity-linux-configuration)
+- [rrjoson's guide](https://github.com/rrjoson/udacity-linux-server-configuration/blob/master/README.md)
+- [stueken's guide](https://github.com/stueken/FSND-P5_Linux-Server-Configuration)
