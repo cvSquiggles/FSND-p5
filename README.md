@@ -6,7 +6,7 @@ I've attempted this from scratch 3 times now following different guides, and eve
 I just get a 500 internal server error. I've looked through the error log files, and I'm having trouble finding
 the source of the problem, here's the error.log report:
 
-'''
+```
 [Wed Jul 31 04:59:52.609298 2019] [wsgi:error] [pid 2888:tid 139975696873216]     compat.reraise(exc_type, exc_value, exc_tb)
 [Wed Jul 31 04:59:52.609300 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool/impl.py", line 136, in _do_get
 [Wed Jul 31 04:59:52.609302 2019] [wsgi:error] [pid 2888:tid 139975696873216]     return self._create_connection()
@@ -27,7 +27,7 @@ the source of the problem, here's the error.log report:
 [Wed Jul 31 04:59:52.609338 2019] [wsgi:error] [pid 2888:tid 139975696873216] ProgrammingError: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "check_same_thread"
 [Wed Jul 31 04:59:52.609340 2019] [wsgi:error] [pid 2888:tid 139975696873216]
 [Wed Jul 31 04:59:52.609342 2019] [wsgi:error] [pid 2888:tid 139975696873216] (Background on this error at: http://sqlalche.me/e/f405)
-'''
+```
 
 My project runs fine through flask on localhost, and I see the correct tables in my postgres db,  so that's not the issue.
 
