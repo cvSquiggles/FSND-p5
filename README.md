@@ -2,36 +2,14 @@
 
 ## Project Status
 
-I've attempted this from scratch 3 times now following different guides, and everytime, when i get to the end,
-I just get a 500 internal server error. I've looked through the error log files, and I'm having trouble finding
-the source of the problem, here's the error.log report:
+It appears everything is functional except for the goolge oAuth2 login.
 
-```
-[Wed Jul 31 04:59:52.609298 2019] [wsgi:error] [pid 2888:tid 139975696873216]     compat.reraise(exc_type, exc_value, exc_tb)
-[Wed Jul 31 04:59:52.609300 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool/impl.py", line 136, in _do_get
-[Wed Jul 31 04:59:52.609302 2019] [wsgi:error] [pid 2888:tid 139975696873216]     return self._create_connection()
-[Wed Jul 31 04:59:52.609304 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool/base.py", line 308, in _create_connection
-[Wed Jul 31 04:59:52.609307 2019] [wsgi:error] [pid 2888:tid 139975696873216]     return _ConnectionRecord(self)
-[Wed Jul 31 04:59:52.609309 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool/base.py", line 437, in __init__
-[Wed Jul 31 04:59:52.609311 2019] [wsgi:error] [pid 2888:tid 139975696873216]     self.__connect(first_connect_check=True)
-[Wed Jul 31 04:59:52.609313 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/pool/base.py", line 639, in __connect
-[Wed Jul 31 04:59:52.609315 2019] [wsgi:error] [pid 2888:tid 139975696873216]     connection = pool._invoke_creator(self)
-[Wed Jul 31 04:59:52.609318 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/strategies.py", line 114, in connect
-[Wed Jul 31 04:59:52.609322 2019] [wsgi:error] [pid 2888:tid 139975696873216]     return dialect.connect(*cargs, **cparams)
-[Wed Jul 31 04:59:52.609325 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 453, in connect
-[Wed Jul 31 04:59:52.609327 2019] [wsgi:error] [pid 2888:tid 139975696873216]     return self.dbapi.connect(*cargs, **cparams)
-[Wed Jul 31 04:59:52.609329 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/psycopg2/__init__.py", line 125, in connect
-[Wed Jul 31 04:59:52.609331 2019] [wsgi:error] [pid 2888:tid 139975696873216]     dsn = _ext.make_dsn(dsn, **kwargs)
-[Wed Jul 31 04:59:52.609333 2019] [wsgi:error] [pid 2888:tid 139975696873216]   File "/usr/local/lib/python2.7/dist-packages/psycopg2/extensions.py", line 174, in make_dsn
-[Wed Jul 31 04:59:52.609336 2019] [wsgi:error] [pid 2888:tid 139975696873216]     parse_dsn(dsn)
-[Wed Jul 31 04:59:52.609338 2019] [wsgi:error] [pid 2888:tid 139975696873216] ProgrammingError: (psycopg2.ProgrammingError) invalid dsn: invalid connection option "check_same_thread"
-[Wed Jul 31 04:59:52.609340 2019] [wsgi:error] [pid 2888:tid 139975696873216]
-[Wed Jul 31 04:59:52.609342 2019] [wsgi:error] [pid 2888:tid 139975696873216] (Background on this error at: http://sqlalche.me/e/f405)
-```
+Even after adding xip.io to the authorized domain in my google credential for this app, 
+and adding the uri, and redirect uri's, I get this issue:
 
-My project runs fine through flask on localhost, and I see the correct tables in my postgres db,  so that's not the issue.
-
-I'm really worried, as there are only a few weeks left in the class, and I really could use some guidance!
+**After the google sign-in pops up, I click to sign in with my google account, and then nothing happens.
+The redirect doesn't occur, and I'm not successfully logged in, as when I manually reroute to homepage,
+the login/logout button still reads login.  Any help would be greatly appreciated, as I'm a bit stumped.**
 
 ## Grader Info
 
@@ -209,7 +187,7 @@ At this point everything should be set up, we just need to put our already worki
         
 # References
 
-These are the guides that I followed, and unfortunately I had no luck:
+These are the guides that I followed:
 
 - [cuanqin3's guide](https://github.com/chuanqin3/udacity-linux-configuration)
 - [rrjoson's guide](https://github.com/rrjoson/udacity-linux-server-configuration/blob/master/README.md)
