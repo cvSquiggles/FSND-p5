@@ -1,16 +1,5 @@
 ### Udacity Full-stack Web Dev. - Project 5
 
-## Project Status
-
-It appears everything is functional except for the goolge oAuth2 login.
-
-Even after adding xip.io to the authorized domain in my google credential for this app, 
-and adding the uri, and redirect uri's, I get this issue:
-
-**After the google sign-in pops up, I click to sign in with my google account, and then nothing happens.
-The redirect doesn't occur, and I'm not successfully logged in, as when I manually reroute to homepage,
-the login/logout button still reads login.  Any help would be greatly appreciated, as I'm a bit stumped.**
-
 ## Grader Info
 
 Host Name: ec2-35-182-93-218.ca-central-1.compute.amazonaws.com
